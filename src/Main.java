@@ -168,8 +168,6 @@ public class Main {
         }
         System.out.println("Phone number does not exist.");
     }
-        throw new UnsupportedOperationException("Unimplemented method 'getContactBasedOnNumber'");
-    }
 
     private static void checkForNumberConflicts(ContactBook cBook) {
         // TODO Auto-generated method stub
