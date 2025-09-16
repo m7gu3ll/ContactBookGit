@@ -24,7 +24,7 @@ public class Main {
     public static final String CONTACT_UPDATED = "contactBook.Contact updated.";
     public static final String BOOK_EMPTY = "contactBook.Contact book empty.";
     public static final String REPEAT_NUMBERS = "There are contacts that share phone numbers.";
-    public static final String DIFFERENT_NUMBERS = "All contacts have different phone numbers";
+    public static final String DIFFERENT_NUMBERS = "All contacts have different phone numbers.";
     public static final String QUIT_MSG = "Goodbye!";
     public static final String COMMAND_ERROR = "Unknown command.";
 
@@ -161,6 +161,7 @@ public class Main {
 
     private static void getContactBasedOnNumber(Scanner in, ContactBook cBook) {
         int phoneNumber = in.nextInt();
+        in.nextLine();
         cBook.initializeIterator();
         while (cBook.hasNext()) {
             Contact cnt = cBook.next();
