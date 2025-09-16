@@ -23,6 +23,8 @@ public class Main {
     public static final String CONTACT_REMOVED = "contactBook.Contact removed.";
     public static final String CONTACT_UPDATED = "contactBook.Contact updated.";
     public static final String BOOK_EMPTY = "contactBook.Contact book empty.";
+    public static final String REPEAT_NUMBERS = "There are contacts that share phone numbers.";
+    public static final String DIFFERENT_NUMBERS = "All contacts have different phone numbers";
     public static final String QUIT_MSG = "Goodbye!";
     public static final String COMMAND_ERROR = "Unknown command.";
 
@@ -163,7 +165,22 @@ public class Main {
     }
 
     private static void checkForNumberConflicts(ContactBook cBook) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'checkForNumberConflicts'");
+        int cBookLen = cBook.getNumberOfContacts();
+        for (int i = 0; i < cBookLen; i++) {
+            cBook.initializeIterator();
+            Contact contact = cBook.next();
+            for (int j = 0; j < i; j++) {
+                contact = cBook.next();
+            }
+
+            while (cBook.hasNext()) {
+                Contact otherContact = cBook.next();
+                if (contact.getPhone() == otherContact.getPhone()) {
+                    System.out.println(REPEAT_NUMBERS);
+                    return;
+                }
+            }
+        }
+        System.out.println(DIFFERENT_NUMBERS);
     }
 }
