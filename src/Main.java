@@ -163,7 +163,8 @@ public class Main {
         while (cBook.hasNext()) {
             Contact cnt = cBook.next();
             if (cnt.getPhone() == phoneNumber) {
-                // por fazer
+                System.out.println(cnt.getName());
+                return;
             }
         }
         System.out.println("Phone number does not exist.");
