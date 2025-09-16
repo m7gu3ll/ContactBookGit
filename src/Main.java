@@ -158,7 +158,16 @@ public class Main {
     }
 
     private static void getContactBasedOnNumber(Scanner in, ContactBook cBook) {
-        // TODO Auto-generated method stub
+        int phoneNumber = in.nextInt();
+        cBook.initializeIterator();
+        while (cBook.hasNext()) {
+            Contact cnt = cBook.next();
+            if (cnt.getPhone() == phoneNumber) {
+                // por fazer
+            }
+        }
+        System.out.println("Phone number does not exist.");
+    }
         throw new UnsupportedOperationException("Unimplemented method 'getContactBasedOnNumber'");
     }
 
